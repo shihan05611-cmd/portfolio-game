@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="元素回廊项目案例：元素反应驱动的动作 Roguelike。">
+  <title>元素回廊 — SHI HAN</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../script.js" defer></script>
+</head>
+<body class="case-page case-page--dungeon">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header shell">
+    <a class="identity" href="../../">SHI HAN <span>史涵</span></a>
+    <a class="back-link" href="../../#work"><span aria-hidden="true">←</span> All Work</a>
+  </header>
+  <main id="main">
+    <section class="case-hero shell">
+      <div class="case-kicker reveal"><span>PROJECT 01</span><span>GAME PROJECT · GODOT</span><span>2026</span></div>
+      <h1 class="reveal">元素回廊</h1>
+      <p class="case-deck reveal">一款由元素附着与连锁反应驱动的动作 Roguelike，让每次攻击既是伤害，也是下一次选择的铺垫。</p>
+      <figure class="case-cover reveal">
+        <img src="../../assets/element-corridor-showcase.png" alt="元素回廊实机画面：蓝色角色在暗色像素地牢中与两名敌人战斗" width="1280" height="591">
+        <figcaption>LIVE BUILD CAPTURE · ELEMENT CORRIDOR</figcaption>
+      </figure>
+    </section>
+
+    <section class="case-intro shell reveal">
+      <p class="section-number">01 / DEFINITION</p>
+      <div><h2>让元素不是伤害颜色，<br>而是战斗的语法。</h2><p>玩家通过附着、触发与消费元素制造连锁反应。系统的价值不只在组合数量，而在于每一步都能被看见、被预测、被利用。</p></div>
+    </section>
+
+    <section class="case-problem shell reveal">
+      <p class="section-number">02 / DESIGN PROBLEM</p>
+      <div class="problem-grid">
+        <div><span>A</span><h3>信息密度</h3><p>状态很多，但玩家必须在移动中迅速理解当前元素与可触发反应。</p></div>
+        <div><span>B</span><h3>反馈层级</h3><p>普通伤害、附着、反应和击退需要不同视觉权重，避免特效淹没规则。</p></div>
+        <div><span>C</span><h3>构筑延展</h3><p>技能升级要改变决策方式，而不只是让数值持续变大。</p></div>
+      </div>
+    </section>
+
+    <section class="media-band media-band--dungeon reveal" aria-label="实机效果展示位">
+      <div class="media-slot"><span>GAMEPLAY / GIF 01</span><strong>Element attach → Reaction → Knockback</strong><small>1600 × 900 recommended</small></div>
+    </section>
+
+    <section class="case-systems shell reveal">
+      <p class="section-number">03 / KEY SYSTEMS</p>
+      <div class="systems-list">
+        <article><span>01</span><h3>Readable reaction chain</h3><p>状态图标、命中文案、位移方向和短时特效共同解释一次反应，而不是依赖单个飘字。</p></article>
+        <article><span>02</span><h3>Skill as transformation</h3><p>升级围绕范围、消耗方式、持续时间与触发窗口，形成不同作战节奏。</p></article>
+        <article><span>03</span><h3>Feedback ownership</h3><p>视觉反馈跟随实际目标与世界坐标，保持多目标战斗中的空间可信度。</p></article>
+      </div>
+    </section>
+
+    <section class="process shell reveal">
+      <p class="section-number">04 / PROCESS</p>
+      <div><h2>Prototype → Observe → Clarify</h2><p>先用可运行原型验证规则，再通过固定场景与同镜头截图检查信息是否真的传达。自动测试保证语义稳定，窗口实机画面负责视觉验收。</p></div>
+    </section>
+
+    <section class="case-links shell reveal">
+      <h2>Explore the project</h2>
+      <div><span>GitHub · LINK TO ADD</span><a href="https://shihan05611-cmd.github.io/element-dungeon/" target="_blank" rel="noopener">Live Demo <span aria-hidden="true">↗</span></a><span>Documentation · LINK TO ADD</span></div>
+    </section>
+  </main>
+  <footer class="site-footer shell"><a href="../project-2/">Next: 弈者 <span aria-hidden="true">→</span></a><p>SHI HAN · <span data-year>2026</span></p></footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Controller：面向 Codex 多 Agent 协作的图式编排工具。">
+  <title>Controller — SHI HAN</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../script.js" defer></script>
+</head>
+<body class="controller-page">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header shell">
+    <a class="identity" href="../../">SHI HAN <span>史涵</span></a>
+    <a class="back-link" href="../../#work"><span aria-hidden="true">←</span> All Work</a>
+  </header>
+  <main id="main">
+    <section class="controller-hero shell">
+      <div class="case-kicker reveal"><span>OPEN SOURCE TOOL</span><span>GRAPH-BASED AGENT ORCHESTRATION</span><span>2026</span></div>
+      <h1 class="reveal">Controller<span class="terminal-cursor" aria-hidden="true">_</span></h1>
+      <div class="controller-deck reveal">
+        <p>Make multi-agent work<br>visible, bounded, reviewable.</p>
+        <p>将复杂任务拆成可追踪的图，为每个 Agent 路由独立会话、限定执行边界，并把 Review 变成结果的一部分。</p>
+      </div>
+      <figure class="case-cover controller-cover reveal">
+        <img src="../../assets/controller-dashboard.png" alt="Controller 实际运行界面：任务节点、依赖路径与任务检查器共同展示一个正在执行的任务图" width="1280" height="681" decoding="async">
+        <figcaption>任务图界面 · 实际运行截图</figcaption>
+      </figure>
+    </section>
+
+    <section class="controller-problem shell reveal">
+      <p class="section-number">01 / THE PROBLEM</p>
+      <div><h2>并行并不等于协作。</h2><p>当任务只靠聊天记录流动，依赖关系、权限边界、上下文归属和最终验收很快失控。Controller 用显式任务图保存这些关系。</p></div>
+    </section>
+
+    <section class="feature-matrix shell reveal" aria-labelledby="features-title">
+      <h2 id="features-title" class="sr-only">核心能力</h2>
+      <article><span>01</span><h3>Task Graph</h3><p>把任务、依赖与状态放入 DAG，使阻塞和可并行路径一眼可见。</p></article>
+      <article><span>02</span><h3>Session Routing</h3><p>让不同工作进入对应会话，减少长上下文反复处理与职责串线。</p></article>
+      <article><span>03</span><h3>Guardrails</h3><p>通过 allowlist、预算和状态约束，把 Agent 的动作限制在任务边界内。</p></article>
+      <article><span>04</span><h3>Review Gate</h3><p>执行结果必须经过独立 Review，接受、返工与证据形成可追溯闭环。</p></article>
+    </section>
+
+    <section class="architecture shell reveal" aria-labelledby="architecture-title">
+      <div class="architecture-head"><p class="section-number">02 / ARCHITECTURE</p><h2 id="architecture-title">Execution is a route,<br>not a black box.</h2></div>
+      <div class="architecture-graph" role="img" aria-label="任务从 Controller 依次进入 Executor、Review，最后生成 Result；Session Router 和 Guardrails 约束执行过程">
+        <div class="arch-node arch-node--main"><small>CONTROL PLANE</small><strong>Controller</strong></div>
+        <div class="arch-arrow" aria-hidden="true">→</div>
+        <div class="arch-node"><small>01</small><strong>Executor</strong><span>worktree / session</span></div>
+        <div class="arch-arrow" aria-hidden="true">→</div>
+        <div class="arch-node"><small>02</small><strong>Review</strong><span>evidence / verdict</span></div>
+        <div class="arch-arrow" aria-hidden="true">→</div>
+        <div class="arch-node arch-node--result"><small>03</small><strong>Result</strong><span>accepted / rework</span></div>
+        <div class="arch-rail arch-rail--top"><span>SESSION ROUTER</span></div>
+        <div class="arch-rail arch-rail--bottom"><span>GUARDRAILS · ALLOWLIST · BUDGET</span></div>
+      </div>
+    </section>
+
+    <section class="quick-start shell reveal" aria-labelledby="quick-title">
+      <div><p class="section-number">03 / QUICK START</p><h2 id="quick-title">Start with one graph.</h2></div>
+      <pre aria-label="Controller 安装和启动示例"><code><span>$</span> npm install -g controller-package
+<span>$</span> controller init
+<span>$</span> controller run mission.yaml</code></pre>
+      <p class="placeholder-note">命令为内容占位；发布前请替换为实际 npm 包名与 CLI。</p>
+    </section>
+
+    <section id="links" class="controller-links shell reveal">
+      <a class="controller-link" href="https://github.com/shihan05611-cmd/Controller" target="_blank" rel="noopener">GitHub Repository <span>打开仓库 ↗</span></a>
+      <a class="disabled-link" aria-disabled="true">npm Package <span>URL TO ADD</span></a>
+    </section>
+  </main>
+  <footer class="site-footer shell"><a href="../../">Back to Selected Work <span aria-hidden="true">→</span></a><p>SHI HAN · <span data-year>2026</span></p></footer>
+</body>
+</html>

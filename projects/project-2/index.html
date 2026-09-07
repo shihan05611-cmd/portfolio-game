@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="弈者项目案例：棋盘策略与 Roguelike 构筑结合的 Web 游戏。">
+  <title>弈者 — SHI HAN</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../script.js" defer></script>
+</head>
+<body class="case-page case-page--yizhe">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header shell">
+    <a class="identity" href="../../">SHI HAN <span>史涵</span></a>
+    <a class="back-link" href="../../#work"><span aria-hidden="true">←</span> All Work</a>
+  </header>
+  <main id="main">
+    <section class="case-hero shell">
+      <div class="case-kicker reveal"><span>PROJECT 02</span><span>GAME PROJECT · WEB</span><span>2026</span></div>
+      <h1 class="reveal">弈者</h1>
+      <p class="case-deck reveal">一款把角色能力带上棋盘、再用 Roguelike 路线不断改写阵容的策略游戏。</p>
+      <figure class="case-cover reveal">
+        <img src="../../assets/yizhe-showcase.png" alt="弈者实机画面：肉鸽远征中展示四名可选初始角色及技能说明" width="1280" height="993">
+        <figcaption>LIVE BUILD CAPTURE · CHESSORS</figcaption>
+      </figure>
+    </section>
+
+    <section class="case-intro shell reveal">
+      <p class="section-number">01 / DEFINITION</p>
+      <div><h2>每个棋子都是角色，<br>每次行棋都是构筑。</h2><p>项目把棋盘空间、角色技能、资源节奏与路线奖励放进同一局游戏。玩家不是背诵最优解，而是在变化的条件下持续重组策略。</p></div>
+    </section>
+
+    <section class="case-problem shell reveal">
+      <p class="section-number">02 / DESIGN PROBLEM</p>
+      <div class="problem-grid">
+        <div><span>A</span><h3>规则可读</h3><p>角色能力丰富，但行动范围、目标与结果必须在落子前清楚表达。</p></div>
+        <div><span>B</span><h3>随机但可控</h3><p>起始角色、路线与奖励提供变化，同时保留足够信息让玩家做有依据的选择。</p></div>
+        <div><span>C</span><h3>长期节奏</h3><p>单场对局、章节成长和永久成长需要彼此区分，避免数值成长吞掉策略空间。</p></div>
+      </div>
+    </section>
+
+    <section class="media-band media-band--yizhe reveal" aria-label="实机效果展示位">
+      <div class="media-slot"><span>GAMEPLAY / GIF 01</span><strong>Position → Skill → Pursuit</strong><small>1600 × 900 recommended</small></div>
+    </section>
+
+    <section class="case-systems shell reveal">
+      <p class="section-number">03 / KEY SYSTEMS</p>
+      <div class="systems-list">
+        <article><span>01</span><h3>Character-shaped pieces</h3><p>棋子职业提供基础规则，角色技能负责打破规则，两层共同决定队伍身份。</p></article>
+        <article><span>02</span><h3>Run as a decision arc</h3><p>起始选择、节点、遗物与奖励构成连续决策链，让阵容在一局中逐渐成形。</p></article>
+        <article><span>03</span><h3>Observable balance</h3><p>固定配置、种子和策略做可复现对比；模拟结果用于发现问题，不替代真实内容验收。</p></article>
+      </div>
+    </section>
+
+    <section class="process shell reveal">
+      <p class="section-number">04 / PROCESS</p>
+      <div><h2>Rules → Simulation → Play</h2><p>先把规则写成可观察指标，用批量模拟检查极端情况，再回到实际对局判断节奏、理解成本与选择质量。</p></div>
+    </section>
+
+    <section class="case-links shell reveal">
+      <h2>Explore the project</h2>
+      <div><span>GitHub · LINK TO ADD</span><a href="https://shihan05611-cmd.github.io/NewChessors/" target="_blank" rel="noopener">Live Demo <span aria-hidden="true">↗</span></a><span>Documentation · LINK TO ADD</span></div>
+    </section>
+  </main>
+  <footer class="site-footer shell"><a href="../../tools/controller/">Next: Controller <span aria-hidden="true">→</span></a><p>SHI HAN · <span data-year>2026</span></p></footer>
+</body>
+</html>

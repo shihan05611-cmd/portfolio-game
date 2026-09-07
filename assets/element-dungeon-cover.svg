@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="t d">
+  <title id="t">Element Dungeon concept cover</title><desc id="d">An abstract top-down pixel dungeon split by water and fire reactions.</desc>
+  <defs><pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#b9d5dc" stroke-opacity=".09"/></pattern><filter id="glow"><feGaussianBlur stdDeviation="24"/></filter></defs>
+  <rect width="1600" height="1000" fill="#0e1b2b"/><rect x="70" y="70" width="1460" height="860" rx="6" fill="#13263a" stroke="#587086"/><rect x="70" y="70" width="1460" height="860" fill="url(#grid)"/>
+  <path d="M70 320h300v-250M1530 650h-300v280M760 70v210h260v190h510M70 730h370v200" fill="none" stroke="#668098" stroke-width="18"/>
+  <path d="M120 610C310 480 430 760 650 620s360-310 570-130 230 160 310 90v350H70z" fill="#2c79a0" fill-opacity=".36"/>
+  <circle cx="790" cy="510" r="178" fill="#1da8c8" opacity=".22" filter="url(#glow)"/><circle cx="790" cy="510" r="116" fill="none" stroke="#55d9e8" stroke-width="7" stroke-dasharray="12 18"/>
+  <g fill="#ff6a3f"><path d="M790 366c48 68 108 116 108 192a108 108 0 1 1-216 0c0-56 28-96 73-146-5 51 24 70 35 82 33-39 20-83 0-128z"/><circle cx="790" cy="510" r="190" fill="none" stroke="#ff6a3f" stroke-opacity=".42" stroke-width="2"/></g>
+  <g fill="#f3f0e9"><rect x="270" y="224" width="54" height="54" transform="rotate(45 297 251)"/><rect x="1240" y="720" width="54" height="54" transform="rotate(45 1267 747)"/></g>
+  <g font-family="Arial,sans-serif" fill="#dbeaf1"><text x="110" y="136" font-size="24" letter-spacing="8">ELEMENT / REACTION</text><text x="110" y="884" font-size="20" letter-spacing="5" opacity=".72">ROOM 04 — TIDE / EMBER</text><text x="1450" y="884" text-anchor="end" font-size="84" font-weight="700">ED</text></g>
+</svg>

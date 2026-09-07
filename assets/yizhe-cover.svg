@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="t d">
+  <title id="t">The New Player concept cover</title><desc id="d">An abstract strategy board with opposing character pieces.</desc>
+  <defs><pattern id="board" width="144" height="144" patternUnits="userSpaceOnUse"><rect width="144" height="144" fill="#d6bea0"/><rect width="72" height="72" fill="#b44536"/><rect x="72" y="72" width="72" height="72" fill="#b44536"/></pattern><filter id="shadow"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-opacity=".28"/></filter></defs>
+  <rect width="1600" height="1000" fill="#d9c8ad"/><rect x="390" y="105" width="900" height="790" fill="url(#board)" stroke="#4a1a1a" stroke-width="14"/>
+  <rect x="0" y="0" width="300" height="1000" fill="#7b2024"/><path d="M300 0l90 105v790l-90 105z" fill="#55171a"/>
+  <g filter="url(#shadow)"><circle cx="680" cy="630" r="74" fill="#f0dfc1" stroke="#4a1a1a" stroke-width="12"/><circle cx="1000" cy="350" r="74" fill="#642026" stroke="#f0dfc1" stroke-width="12"/><path d="M680 578l45 78h-90z" fill="#4a1a1a"/><path d="M1000 402l-45-78h90z" fill="#f0dfc1"/></g>
+  <g fill="none" stroke="#542026" stroke-width="5"><circle cx="536" cy="486" r="24"/><circle cx="1112" cy="774" r="24"/><path d="M536 462v-42m-42 66h-42M1112 798v42m42-66h42"/></g>
+  <g font-family="Arial,sans-serif"><text x="75" y="112" fill="#f3e5cd" font-size="22" letter-spacing="7">TACTICS</text><text x="75" y="870" fill="#f3e5cd" font-size="92" font-weight="700" letter-spacing="-6">新弈者</text><text x="75" y="916" fill="#d9ad9e" font-size="19" letter-spacing="4">BUILD THE NEXT MOVE</text><text x="1260" y="948" text-anchor="end" fill="#542026" font-size="21" letter-spacing="6">RUN / 07</text></g>
+</svg>
