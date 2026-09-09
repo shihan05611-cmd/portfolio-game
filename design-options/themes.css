@@ -1,0 +1,62 @@
+/* Visual studies. Only activated through ?theme=atlas or ?theme=comic. */
+html[data-theme="atlas"] {
+  --paper: #141d26;
+  --surface: #1b2935;
+  --ink: #e2e8e9;
+  --muted: #a9b9c6;
+  --line: #354854;
+  --accent: #e0bd77;
+  --pen: #e0bd77;
+  --dark: #111922;
+  color-scheme: dark;
+}
+[data-theme="atlas"] body {
+  background-image: linear-gradient(#92b8c605 1px, transparent 1px), linear-gradient(90deg, #92b8c605 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+[data-theme="atlas"] .site-header { border-bottom-style: dashed; }
+[data-theme="atlas"] .identity-mark { font: 700 24px ui-monospace, monospace; letter-spacing: -2px; }
+[data-theme="atlas"] .section-heading { border-left: 4px solid var(--pen); padding-left: 22px; }
+[data-theme="atlas"] .section-heading h1 { letter-spacing: 4px; font-size: 44px; }
+[data-theme="atlas"] .project { border-top: 1px dashed var(--line); }
+[data-theme="atlas"] .project-heading { padding-inline: 15px; border-left: 2px solid var(--pen); }
+[data-theme="atlas"] .project-heading .project-name span { font: 11px ui-monospace, monospace; text-transform: uppercase; letter-spacing: 2px; }
+[data-theme="atlas"] .eyebrow { letter-spacing: 2.5px; }
+[data-theme="atlas"] .button-link { border-color: #6e818d; border-radius: 0; box-shadow: none; background: #20313d; }
+[data-theme="atlas"] .button-link:hover { background: #34485b; }
+[data-theme="atlas"] .dungeon-image { background: #0c151d; border-color: #405664; border-radius: 0; padding: 10px 10px 0; }
+[data-theme="atlas"] .cat-playground { background-color: #192935; border-color: #405664; border-radius: 0; background-image: linear-gradient(#90b4cc0d 1px, transparent 1px), linear-gradient(90deg, #90b4cc0d 1px, transparent 1px); }
+[data-theme="atlas"] .cat-playground::before { width: 30px; height: 30px; top: -1px; left: -1px; background: transparent; border-top: 2px solid var(--pen); border-left: 2px solid var(--pen); transform: none; }
+[data-theme="atlas"] .cat-note { transform: none; font-size: 11px; letter-spacing: 2px; }
+[data-theme="atlas"] .cat-rune { border-radius: 0; transform: none; background: #e2e8e9; color: #243443; }
+[data-theme="atlas"] .cat-button::before { border-radius: 0; transform: rotateX(55deg) rotate(45deg); width: 76px; height: 76px; bottom: -5px; border-color: #bcceda; }
+[data-theme="atlas"] .cat-element { letter-spacing: 3px; }
+[data-theme="atlas"] .side-label::before { transform: none; }
+[data-theme="atlas"] .character-strip { background: #172531; border: 1px solid #405664; padding: 22px 22px 0; }
+[data-theme="atlas"] .character-lineup { gap: 16px; }
+[data-theme="atlas"] .character-lineup figure { background: linear-gradient(180deg,#1f3443,#1a2935); border: 1px solid #354b59; }
+[data-theme="atlas"] .character-lineup figure::before { display: none; }
+[data-theme="atlas"] .character-lineup img { filter: drop-shadow(0 8px 10px #0005); padding-top: 15px; }
+[data-theme="atlas"] .character-lineup figcaption { background: #0e1b26; border-top: 1px solid #354b59; color: #e0bd77; padding: 12px 0; }
+[data-theme="atlas"] .character-lineup figcaption span { color: #91aabd; }
+[data-theme="atlas"] .character-strip-heading { color: #b8cbd6; }
+[data-theme="atlas"] .chess-showcase { background: #0e1923; border: 1px solid #354b59; border-radius: 0; }
+[data-theme="atlas"] .reaction-lab,[data-theme="atlas"] .synergy-study { border-radius: 0; }
+[data-theme="atlas"] .reaction-controls button { color: #afc0cc; border-color: #456173; }
+[data-theme="atlas"] .reaction-controls button[aria-pressed="true"] { color: #172733; background: #cedde4; border-color: #cedde4; }
+[data-theme="atlas"] .reaction-controls button:hover { background: #354b59; color: white; }
+[data-theme="atlas"] .reaction-result { background: #101d29; }
+[data-theme="atlas"] .result-index { color: #aacadb !important; }
+[data-theme="atlas"] .earth-symbol { background: #37362c; border-color: #776b4c; color: #e0bd77; box-shadow: 4px 4px 0 #101921; }
+[data-theme="atlas"] .iteration-badge { background: #304237; color: #c4dbb7; }
+[data-theme="atlas"] .exploration-image { background: #1e2e3a; }
+
+@media(max-width:700px) {
+  [data-theme="atlas"] .section-heading h1 { font-size: 36px; }
+  [data-theme="atlas"] .project-heading { padding-left: 10px; }
+  [data-theme="atlas"] .character-strip { padding: 15px 10px 0; }
+  [data-theme="comic"] .section-heading h1 { font-size: 40px; }
+  [data-theme="comic"] .section-heading h1::after { font-size: 13px; margin-left: 10px; }
+  [data-theme="comic"] .character-lineup img { height: 200px; margin-top: -15px; }
+  [data-theme="comic"] .character-lineup { gap: 26px 14px; }
+}

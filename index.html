@@ -1,107 +1,82 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="comic">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="史涵的游戏方向个人作品集：游戏项目、开发工具与数值拆解案。">
-  <title>史涵 / SHI HAN GAME — 游戏作品</title>
+  <meta name="description" content="史涵的游戏设计作品集：元素反应、跨流派构筑与数值平衡。探索元素回廊与弈者背后的设计思考。">
+  <meta name="theme-color" content="#fffdf7">
+  <title>史涵 SHI HAN — 游戏设计作品集</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./home.css">
+  <link rel="stylesheet" href="./sketch.css">
+  <link rel="stylesheet" href="./design-options/themes.css">
+  <link rel="stylesheet" href="./comic.css">
+  <script>
+    const previewTheme = new URLSearchParams(location.search).get('theme');
+    if (['sketch', 'atlas', 'comic'].includes(previewTheme)) document.documentElement.dataset.theme = previewTheme;
+  </script>
+  <script src="./home.js" defer></script>
+  <link rel="preload" as="image" href="./assets/characters/cat/cat_idle-cropped.png">
+  <link rel="preload" as="image" href="./assets/characters/cat/cat_fire_idle-cropped.png">
+  <link rel="preload" as="image" href="./assets/characters/cat/cat_water_idle-cropped.png">
+  <noscript><style>.cat-animation-toggle,.cat-note,.cat-help,.cat-forms{display:none}</style></noscript>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
   <header class="site-header shell">
-    <a class="identity" href="./" aria-label="返回游戏作品首页">SHI HAN · GAME <span>史涵</span></a>
-    <nav class="top-nav" aria-label="主要导航">
-      <a href="#work">游戏作品</a>
-    </nav>
+    <a class="identity" href="./" aria-label="史涵，游戏作品首页"><span class="identity-mark" aria-hidden="true">S.</span> SHI HAN <span class="identity-cn">史涵</span></a>
+    <nav aria-label="主要导航"><a href="#work">游戏作品</a><a href="#yizhe">弈者</a><a href="#explorations">更多探索 ↗</a></nav>
   </header>
-
   <main id="main">
     <section id="work" class="work-section shell" aria-labelledby="work-title">
-      <div class="section-heading reveal">
-        <h1 id="work-title">游戏作品</h1>
-        <span>01—04 / 2026</span>
-      </div>
-
-      <article class="project project-primary reveal">
-        <a class="project-visual project-visual--dungeon" href="https://shihan05611-cmd.github.io/element-dungeon/" target="_blank" rel="noopener" aria-label="在线体验元素回廊（新窗口）">
-          <img src="./assets/element-corridor-showcase.png" alt="元素回廊实机画面：蓝色角色在暗色像素地牢中与两名敌人战斗" width="1280" height="591" loading="lazy" decoding="async">
-          <span class="visual-index">01</span>
-        </a>
-        <div class="project-copy">
-          <div>
-            <p class="project-type">01 / 游戏作品 · Godot 引擎</p>
-            <h3>元素回廊<br><span>元素反应动作游戏</span></h3>
-          </div>
-          <div class="project-summary">
-            <p>以元素附着与连锁反应为核心，把战斗反馈、技能构筑和地牢探索压进同一套可读规则。</p>
-            <ul class="tag-list" aria-label="项目标签"><li>战斗设计</li><li>系统设计</li><li>视觉反馈</li></ul>
-            <div class="project-actions">
-              <a class="text-link text-link--secondary" href="https://shihan05611-cmd.github.io/element-dungeon/" target="_blank" rel="noopener">在线体验 <span aria-hidden="true">↗</span></a>
+      <div class="section-heading"><div><p class="eyebrow">SELECTED WORKS</p><h1 id="work-title">游戏作品</h1></div></div>
+      <article class="project" id="element">
+        <div class="project-heading"><div><p class="eyebrow"><span class="chapter-number">01</span> ACTION ROGUELIKE / GODOT</p><h2 class="project-name">元素回廊<span>Element Dungeon</span></h2></div><a class="button-link" href="https://shihan05611-cmd.github.io/element-dungeon/" target="_blank" rel="noopener">在线体验 ↗</a></div>
+        <div class="element-showcase">
+          <a class="project-image dungeon-image" href="https://shihan05611-cmd.github.io/element-dungeon/" target="_blank" rel="noopener" aria-label="在线体验元素回廊（新窗口）"><img src="./assets/element-corridor-showcase.png" alt="元素回廊实机画面：蓝色角色在像素地牢中与敌人战斗" width="1280" height="591" loading="eager" fetchpriority="high" decoding="async"><span class="image-caption"><span class="frame-caption">IN-GAME / 01</span> 元素反应动作游戏 <span>实机画面 ↗</span></span></a>
+          <div class="cat-playground" data-cat-element="base">
+            <span class="cat-panel-label">MEET THE CAT</span>
+            <p class="cat-note">点我，切换形态！</p>
+            <button class="cat-button" type="button" aria-label="切换猫咪形态，当前原始形态" aria-describedby="cat-help" disabled>
+              <span class="cat-sprite" role="img" aria-label="元素地牢主角猫的待机动画"></span>
+            </button>
+            <span class="cat-element" aria-live="polite" aria-atomic="true">原始形态</span>
+            <div class="cat-forms" role="group" aria-label="选择猫咪形态">
+              <button type="button" data-cat-form="base" aria-pressed="true" disabled>原始</button>
+              <button type="button" data-cat-form="fire" aria-pressed="false" aria-label="火元素形态" disabled><svg class="form-icon flame-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2c1 5-3 6-2 10 2-1 3-3 3-5 4 3 6 6 5 10-1 4-5 6-9 4S3 15 6 11c0 3 2 3 2 3-1-5 4-7 5-12Z"/><path class="flame-core" d="M12 13c0 3-3 3-2 6 1 2 4 2 5 0s-1-4-3-6Z"/></svg><span>火</span></button>
+              <button type="button" data-cat-form="water" aria-pressed="false" aria-label="水元素形态" disabled><svg class="form-icon drop-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path class="drop-shine" d="M8 15c0 2 1 3 3 3"/></svg><span>水</span></button>
             </div>
+            <p class="cat-help" id="cat-help">点击猫咪或选择下方形态</p>
+            <button class="cat-animation-toggle" type="button" aria-pressed="false">暂停动画</button>
           </div>
         </div>
+        <aside class="controls-note" aria-label="元素回廊游戏操作"><span class="controls-label">操作指南</span><span><kbd>Shift</kbd> 冲刺</span><span><kbd>E</kbd> 切换元素形态</span><span><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> 对应技能</span><span><kbd>空格</kbd> 跳跃</span></aside>
+        <div class="project-story"><p class="side-label">设计核心<br><span>THE DESIGN IDEA</span></p><div><h4>让元素各司其职，<br>让反应改变战场。</h4><p>元素反应不仅改变伤害，也让元素承担不同的战术职责。</p><p class="iteration-paragraph"><span class="direction-label">迭代方向</span>土元素计划在攻击后留下建筑，再与水、火、雷反应，分别施加减益、驱动冲撞或转化为召唤物。</p></div></div>
+        <div class="insight-row"><span class="insight-number">02</span><div><h4>双元素是起点，单元素也能成立。</h4><p>初始装配两种元素技能，通过特定手段偶尔调用第三种元素；同时保留纯单元素玩法，让玩家在专精与组合之间自由选择。</p></div></div>
+        <details class="design-note"><summary><span><span class="eyebrow">DESIGN NOTE</span>用代价与结果，建立技能的数值尺度</span><span class="note-toggle" aria-hidden="true"><span class="details-icon"></span></span></summary><div class="note-content"><p>以「10 能量 → 10 点远程单体伤害」作为基准，再把范围、爆发速度、元素附着与行动限制计入收益和代价。以下为设计基准示例。</p><div class="table-scroll" tabindex="0" role="region" aria-label="技能代价与收益对比"><table><thead><tr><th scope="col">技能</th><th scope="col">能量与伤害</th><th scope="col">为什么这样定价</th></tr></thead><tbody><tr><th scope="row">普通元素弹</th><td>10 能量 / 10 伤害</td><td>远程单体输出，附带元素附着，作为比较基准。</td></tr><tr><th scope="row">元素爆发</th><td>全部能量 / 每 10 能量折算 8 伤害</td><td>范围伤害与短时爆发效率较高，因此降低单位能量倍率。</td></tr><tr><th scope="row">元素激光</th><td>10 能量 / 10 伤害</td><td>高频伤害、快速附着是收益，施放时灵活性受限是代价。尚未量化哪一侧影响更大，暂按两者抵消，沿用基准倍率。</td></tr></tbody></table></div><p class="note-aside">普攻不消耗能量，但需要接近敌人：距离与风险同样是一种成本。</p></div></details>
       </article>
-
-      <article class="project project-secondary reveal">
-        <div class="project-copy project-copy--side">
-          <div>
-            <p class="project-type">02 / 游戏作品 · 网页端</p>
-            <h3>弈者<br><span>棋盘角色策略游戏</span></h3>
-          </div>
-          <div class="project-summary">
-            <p>将棋盘博弈、角色技能与肉鸽路线选择组合成一局可持续变化的策略体验。</p>
-            <ul class="tag-list" aria-label="项目标签"><li>肉鸽玩法</li><li>策略设计</li><li>网页游戏</li></ul>
-            <div class="project-actions">
-              <a class="text-link text-link--secondary" href="https://shihan05611-cmd.github.io/NewChessors/" target="_blank" rel="noopener">在线体验 <span aria-hidden="true">↗</span></a>
-            </div>
+      <article class="project" id="yizhe">
+        <div class="project-heading"><div><p class="eyebrow"><span class="chapter-number">02</span> TACTICAL ROGUELIKE / WEB</p><h2 class="project-name">弈者<span>Chessors</span></h2></div><a class="button-link" href="https://shihan05611-cmd.github.io/NewChessors/" target="_blank" rel="noopener">在线体验 ↗</a></div>
+        <div class="character-strip" aria-label="弈者角色立绘">
+          <div class="character-strip-heading"><p class="eyebrow">CHARACTER LINEUP</p><span>弈者 · 角色立绘</span><span class="lineup-note">THE CAST / 四位弈者</span></div>
+          <div class="character-lineup">
+            <figure><img src="./assets/characters/yizhe-ningbufan-web.webp" alt="宁不凡角色立绘" width="408" height="480" loading="lazy" decoding="async"><figcaption><i aria-hidden="true">01</i>宁不凡<span>NING BUFAN</span></figcaption></figure>
+            <figure><img src="./assets/characters/yizhe-chiyan-web.webp" alt="赤炎角色立绘" width="374" height="480" loading="lazy" decoding="async"><figcaption><i aria-hidden="true">02</i>赤炎<span>CHI YAN</span></figcaption></figure>
+            <figure><img src="./assets/characters/yizhe-yanshushi-web.webp" alt="炎术士角色立绘" width="282" height="480" loading="lazy" decoding="async"><figcaption><i aria-hidden="true">03</i>炎术士<span>YAN SHU SHI</span></figcaption></figure>
+            <figure><img src="./assets/characters/yizhe-qianji-web.webp" alt="千机角色立绘" width="446" height="480" loading="lazy" decoding="async"><figcaption><i aria-hidden="true">04</i>千机<span>QIAN JI</span></figcaption></figure>
           </div>
         </div>
-        <a class="project-visual project-visual--yizhe" href="https://shihan05611-cmd.github.io/NewChessors/" target="_blank" rel="noopener" aria-label="在线体验弈者（新窗口）">
-          <img src="./assets/yizhe-showcase.png" alt="弈者实机画面：肉鸽远征中展示四名可选初始角色及技能说明" width="1280" height="993" loading="lazy" decoding="async">
-          <span class="visual-index">02</span>
-        </a>
-      </article>
-
-      <article class="tool-feature reveal">
-        <div class="tool-label"><span>03</span><strong>开源工具</strong></div>
-        <div class="tool-body">
-          <div class="tool-copy">
-            <p class="project-type">图式智能体编排</p>
-            <h3>Controller</h3>
-            <p>把多智能体的任务依赖、会话路由、执行边界与独立审查变成一张可追踪的工作图。</p>
-            <div class="tool-links" aria-label="Controller 链接">
-              <a href="https://github.com/shihan05611-cmd/Controller" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-          <div class="tool-visual">
-            <img src="./assets/controller-dashboard.png" alt="Controller 实际运行界面：任务节点、依赖路径与任务检查器共同展示一个正在执行的任务图" width="1280" height="681" loading="lazy" decoding="async">
-          </div>
-        </div>
-      </article>
-
-      <article class="project project-analysis reveal">
-        <a class="project-visual project-visual--analysis" href="https://ocn118lvmrj3.feishu.cn/wiki/Hf3ewx05miPujBkqn7kcYoNJnKh" target="_blank" rel="noopener" aria-label="查看数值拆解案（新窗口）">
-          <img src="./assets/numerical-breakdown-showcase.png" alt="数值拆解案示例：通过角色面板、战斗截图、数据表与收益曲线分析不同属性区间" width="1620" height="1486" loading="lazy" decoding="async">
-          <span class="visual-index">04</span>
-        </a>
-        <div class="project-copy">
-          <div>
-            <p class="project-type">04 / 数值拆解案 · 系统分析</p>
-            <h3>数值拆解案<br><span>遗器收益与属性区间</span></h3>
-          </div>
-          <div class="project-summary">
-            <p>以减防、增伤与攻击加成为变量，拆解不同属性区间的边际收益，形成可复算的配装判断。</p>
-            <ul class="tag-list" aria-label="项目标签"><li>数值策划</li><li>收益建模</li><li>配装分析</li></ul>
-            <div class="project-actions">
-              <a class="text-link text-link--secondary" href="https://ocn118lvmrj3.feishu.cn/wiki/Hf3ewx05miPujBkqn7kcYoNJnKh" target="_blank" rel="noopener">查看拆解案 <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-        </div>
+        <div class="chess-showcase"><div class="chess-intro"><span class="eyebrow">BUILD SYNERGIES</span><p>棋盘策略<br><span>× 肉鸽构筑</span></p><span class="small-label">棋盘角色策略 · 肉鸽构筑</span></div><a class="project-image chess-image" href="https://shihan05611-cmd.github.io/NewChessors/" target="_blank" rel="noopener" aria-label="在线体验弈者（新窗口）"><img src="./assets/yizhe-showcase.png" alt="弈者现有版本实机画面：肉鸽远征的初始角色与技能选择" width="1280" height="993" loading="lazy" decoding="async"><span class="image-caption">现有版本 <span>实机画面 ↗</span></span></a></div>
+        <div class="project-story"><p class="side-label">设计核心<br><span>THE DESIGN IDEA</span></p><div><h4>角色代表一种流派，<br>但不是唯一的启动器。</h4><p>同一种状态可被不同技能利用，组件也能跨流派发挥作用。例如，反击遗物既能强化反击体系，也能为灼烧体系增加命中次数，帮助叠加灼烧。</p></div></div>
+        <div class="plain-highlight"><h3>出牌，指挥整个棋盘。</h3><p>通过「弈者」出牌指挥多枚棋子，专属能力以卡牌或被动参与构筑。大招充能完成后，会化为一张 0 费卡进入手牌，让玩家即时选择释放时机。</p></div>
+        <details class="design-note"><summary><span><span class="eyebrow">DESIGN NOTE</span>反击等级 +1：先获得机制，再提升伤害</span><span class="note-toggle" aria-hidden="true"><span class="details-icon"></span></span></summary><div class="note-content"><p>反击等级从 0 提升到 1，意味着获得「格挡成功后反击」的机制；已有反击时，继续提升等级则增加反击伤害。同一个 +1，既能为其他体系打开入口，也能强化反击体系。</p></div></details>
       </article>
     </section>
+    <section class="explorations shell" id="explorations" aria-labelledby="explorations-title"><div class="section-heading"><div><p class="eyebrow">BEYOND THE GAME</p><h2 id="explorations-title">分析与工具</h2></div><span class="section-count">03 — 04</span></div><div class="exploration-grid">
+      <article class="exploration-card"><a class="exploration-image" href="https://ocn118lvmrj3.feishu.cn/wiki/Hf3ewx05miPujBkqn7kcYoNJnKh" target="_blank" rel="noopener" aria-label="查看数值拆解案（新窗口）"><img src="./assets/numerical-breakdown-showcase.png" alt="数值拆解案：角色属性、战斗数据与收益曲线分析" width="1620" height="1486" loading="lazy" decoding="async"></a><p class="eyebrow">03 / SYSTEM ANALYSIS</p><h3>数值拆解案</h3><p>以减防、增伤与攻击加成为变量，分析属性区间的边际收益，形成可复算的配装判断。</p><a class="inline-link" href="https://ocn118lvmrj3.feishu.cn/wiki/Hf3ewx05miPujBkqn7kcYoNJnKh" target="_blank" rel="noopener">阅读拆解案 ↗</a></article>
+      <article class="exploration-card"><a class="exploration-image tool-image" href="https://github.com/shihan05611-cmd/Controller" target="_blank" rel="noopener" aria-label="查看 Controller GitHub 仓库（新窗口）"><img src="./assets/controller-dashboard.png" alt="Controller 实际运行界面：任务节点、依赖路径与任务检查器" width="1280" height="681" loading="lazy" decoding="async"></a><p class="eyebrow">04 / OPEN-SOURCE TOOL</p><h3>Controller</h3><p>图式智能体编排工具，将任务依赖、会话路由与独立审查组织为可追踪的工作图。</p><a class="inline-link" href="https://github.com/shihan05611-cmd/Controller" target="_blank" rel="noopener">查看 GitHub ↗</a></article>
+    </div></section>
   </main>
+  <footer class="site-footer shell"><a class="identity" href="./">SHI HAN <span class="identity-cn">史涵</span></a><p>GAME DESIGN PORTFOLIO · 2026</p><a href="#main">回到顶部 ↑</a></footer>
 </body>
 </html>
