@@ -229,3 +229,15 @@ html[data-theme="comic"] {
 @media(max-width:700px) {
   [data-theme="comic"] .design-note summary { padding: 15px 0; gap: 16px; }
 }
+
+/* The three directory entries remain visible on narrow screens. */
+.site-header .section-directory a { color: var(--pen); white-space: nowrap; }
+.site-header .section-directory a:hover { text-decoration: underline; text-underline-offset: 6px; }
+.ai-tools-grid { max-width: 760px; }
+.ai-tools-grid .exploration-image { height: auto; aspect-ratio: 1280 / 681; }
+@media(max-width:700px) {
+  [data-theme="comic"] .site-header { flex-wrap: wrap; gap: 0; padding-block: 10px; }
+  .site-header .section-directory { display: flex; flex-basis: 100%; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); margin-top: 5px; }
+  .site-header .section-directory a:last-child { display: flex; }
+  .site-header .section-directory a { min-height: 44px; font-size: 12px; }
+}
