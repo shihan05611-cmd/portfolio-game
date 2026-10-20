@@ -255,3 +255,16 @@ html[data-theme="comic"] {
 .iteration-review .review-subtitle { font-size: 15px; line-height: 1.7; color: var(--muted); }
 .iteration-review .note-toggle { width: 40px; height: 40px; }
 [data-theme="comic"] .iteration-review summary:focus-visible { outline: 2px solid var(--pen); outline-offset: 5px; }
+
+/* Keep the cat silhouette free of the decorative floor ring. */
+[data-theme="comic"] .cat-button::before { content: none; }
+
+/* Explicit disclosure labels, with the native summary as the click target. */
+[data-theme="comic"] .design-note .note-toggle { width: auto; min-height: 40px; height: auto; padding: 9px 12px; gap: 8px; font-size: 13px; font-weight: 600; line-height: 1.5; white-space: nowrap; }
+.note-collapse-label { display: none; }
+.design-note[open] .note-expand-label { display: none; }
+.design-note[open] .note-collapse-label { display: inline; }
+@media (max-width: 480px) {
+  [data-theme="comic"] .design-note summary { flex-wrap: wrap; gap: 12px; }
+  [data-theme="comic"] .design-note summary > span:first-child { flex-basis: 100%; }
+}

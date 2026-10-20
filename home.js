@@ -27,16 +27,9 @@ function selectCatForm(index) {
   catLabel.textContent = element.label;
   catButton.setAttribute('aria-label', `切换猫咪形态，当前${element.label}`);
   catStage.querySelector('.cat-sprite').setAttribute('aria-label', `${element.label}猫咪的待机动画`);
-  document.querySelectorAll('[data-cat-form]').forEach(button => {
-    button.setAttribute('aria-pressed', String(button.dataset.catForm === element.id));
-  });
 }
 catButton.disabled = false;
 catButton.addEventListener('click', () => selectCatForm((catIndex + 1) % catElements.length));
-document.querySelectorAll('[data-cat-form]').forEach(button => {
-  button.disabled = false;
-  button.addEventListener('click', () => selectCatForm(catElements.findIndex(element => element.id === button.dataset.catForm)));
-});
 selectCatForm(0);
 catToggle.addEventListener('click', () => {
   catPaused = !catPaused;
