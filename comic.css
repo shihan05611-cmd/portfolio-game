@@ -268,3 +268,48 @@ html[data-theme="comic"] {
   [data-theme="comic"] .design-note summary { flex-wrap: wrap; gap: 12px; }
   [data-theme="comic"] .design-note summary > span:first-child { flex-basis: 100%; }
 }
+
+/* Secondary disclosure: a light comic paper tag. */
+[data-theme="comic"] .design-note .note-toggle {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+  color: #ae382d;
+  transition: transform .18s ease;
+}
+[data-theme="comic"] .design-note .note-toggle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #fffdf7;
+  border: 1.5px solid #ae382d;
+  border-radius: 2px 4px 2px 3px;
+  transform: rotate(-1.5deg);
+  transition: background .18s ease;
+}
+[data-theme="comic"] .design-note summary:hover .note-toggle,
+[data-theme="comic"] .design-note summary:focus-visible .note-toggle {
+  background: transparent;
+  transform: translateY(-2px);
+}
+[data-theme="comic"] .design-note summary:hover .note-toggle::before,
+[data-theme="comic"] .design-note summary:focus-visible .note-toggle::before { background: #faeee8; }
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="comic"] .design-note .note-toggle,
+  [data-theme="comic"] .design-note .note-toggle::before { transition: none; }
+  [data-theme="comic"] .design-note summary:hover .note-toggle,
+  [data-theme="comic"] .design-note summary:focus-visible .note-toggle { transform: none; }
+}
+
+/* Raised paper buttons retain a lighter weight than the primary CTA. */
+[data-theme="comic"] .design-note .note-toggle::before {
+  border-width: 2px;
+  box-shadow: 3px 3px 0 #ae382d;
+  transition: background .18s ease, box-shadow .18s ease;
+}
+[data-theme="comic"] .design-note summary:active .note-toggle { transform: translate(2px, 2px); }
+[data-theme="comic"] .design-note summary:active .note-toggle::before { box-shadow: 1px 1px 0 #ae382d; }
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="comic"] .design-note .note-toggle::before { transition: none; }
+}
