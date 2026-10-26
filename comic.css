@@ -313,3 +313,9 @@ html[data-theme="comic"] {
 @media (prefers-reduced-motion: reduce) {
   [data-theme="comic"] .design-note .note-toggle::before { transition: none; }
 }
+
+/* Quiet site-wide counters beneath the footer. */
+.visit-stats { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 18px; padding-block: 0 24px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.visit-stats [id^="busuanzi_value_"] { color: var(--ink); font-variant-numeric: tabular-nums; }
+.visit-stats a { color: inherit; text-underline-offset: 3px; }
+.visit-stats a:hover { color: var(--pen); }

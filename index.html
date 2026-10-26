@@ -10,12 +10,13 @@
   <link rel="stylesheet" href="./home.css">
   <link rel="stylesheet" href="./sketch.css">
   <link rel="stylesheet" href="./design-options/themes.css">
-  <link rel="stylesheet" href="./comic.css?v=raised-paper-tag">
+  <link rel="stylesheet" href="./comic.css?v=visit-stats">
   <script>
     const previewTheme = new URLSearchParams(location.search).get('theme');
     if (['sketch', 'atlas', 'comic'].includes(previewTheme)) document.documentElement.dataset.theme = previewTheme;
   </script>
   <script src="./home.js" defer></script>
+  <script src="./visit-stats.js" defer></script>
   <link rel="preload" as="image" href="./assets/characters/cat/cat_idle-cropped.png">
   <link rel="preload" as="image" href="./assets/characters/cat/cat_fire_idle-cropped.png">
   <link rel="preload" as="image" href="./assets/characters/cat/cat_water_idle-cropped.png">
@@ -81,5 +82,12 @@
     </div></section>
   </main>
   <footer class="site-footer shell"><a class="identity" href="./">SHI HAN <span class="identity-cn">史涵</span></a><p>GAME DESIGN PORTFOLIO · 2026</p><a href="#main">回到顶部 ↑</a></footer>
+  <div class="visit-stats shell" aria-label="网站访问统计">
+    <span id="busuanzi_container_site_pv" style="display:none">本站访问 <span id="busuanzi_value_site_pv"></span> 次</span>
+    <span id="busuanzi_container_site_uv" style="display:none">访客 <span id="busuanzi_value_site_uv"></span> 人</span>
+    <span class="visit-stats-status" role="status">访问统计加载中</span>
+    <a href="https://busuanzi.ibruce.info/" target="_blank" rel="noopener" title="访问统计由不蒜子第三方服务提供">不蒜子统计 ↗</a>
+    <noscript>启用 JavaScript 后可显示访问统计。</noscript>
+  </div>
 </body>
 </html>
