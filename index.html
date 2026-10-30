@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./home.css">
   <link rel="stylesheet" href="./sketch.css">
   <link rel="stylesheet" href="./design-options/themes.css">
-  <link rel="stylesheet" href="./comic.css?v=visit-stats">
+  <link rel="stylesheet" href="./comic.css?v=design-principles">
   <script>
     const previewTheme = new URLSearchParams(location.search).get('theme');
     if (['sketch', 'atlas', 'comic'].includes(previewTheme)) document.documentElement.dataset.theme = previewTheme;
@@ -43,6 +43,8 @@
           </div>
         </div>
         <div class="chess-showcase"><div class="chess-intro"><span class="eyebrow">BUILD SYNERGIES</span><p>棋盘策略<br><span>× 肉鸽构筑</span></p></div><a class="project-image chess-image" href="https://shihan05611-cmd.github.io/yizhe-card-game/" target="_blank" rel="noopener" aria-label="在线体验弈者（新窗口）"><img src="./assets/yizhe-showcase.png" alt="弈者实机画面：宁不凡与千机通过手牌指挥棋子，进行回合制战斗" width="1901" height="1063" loading="lazy" decoding="async"><span class="image-caption">现有版本 <span>实机画面 ↗</span></span></a></div>
+        <div class="project-story design-principles"><p class="side-label">设计核心<br><span>THE DESIGN IDEA</span></p><div class="principle-list"><details class="design-note principle-note"><summary><span class="principle-title">不用硬上限约束，而是用规则软约束</span><span class="note-toggle"><span class="note-expand-label">展开详情</span><span class="note-collapse-label">收起详情</span><span class="details-icon" aria-hidden="true"></span></span></summary><div class="note-content"><p>有一张牌的效果是：给对方的灼烧层数翻倍。灼烧的效果类似杀戮尖塔的中毒（结算时造成层数对应的伤害，并减少一层），看牌面效果这是一张极其强的卡，但我用了三组可解决的约束使得这张牌不失控，但又给玩家营造可突破约束的期待感；</p><p><strong>第一个约束是能量约束</strong>，这张牌没有消耗属性理论上它可以无限用，但有一个能量递增：能量会按1、2、4、4...这样一直消耗。不过项目其实只有4点能量上限，想要放出多次，就需要获得比较强的能量手段，当然也可以硬憋；</p><p><strong>第二个约束是靠“牌位”也就是出牌机会来约束</strong>，这张牌属于越打越强所以比一般的卡牌还要依赖运转。一般来说，打完一轮卡组的牌再洗牌进入下一轮需要两个回合（且随着爬塔层数增加，所需轮次会逐渐上升）。但我的战斗设计一般在6～7个回合就可以结束，也就是一般对局可打出的次数可以计算出来；实际也使用了一套伤害建模，去衡量这张牌在资源消耗和输出强化上的关系。</p><p><strong>第三个约束是这张牌只对单体生效，对群手段不足</strong>。由于我们是一个棋盘策略，需要攻击的敌人在3~4个，所以对于杀戮尖塔来说绝对超模的一张牌，放在我们这个游戏里其实并没有太过分。前面两个约束的解决方法比较显而易见，玩家心中会有明确的期待感。第三个约束的解决手段则看起来没那么明显，需要在游戏探索的过程中去发现，因为和游戏的其他卡牌联动有关，比如有一张灼烧体系的卡牌效果是可以把灼烧进行集中转移。玩家就可以先把群体的灼烧转移到一个人身上，然后再用翻倍效果打出Combo，把大量翻倍之后的灼烧层数再去转移到其他怪物身上。</p><p><strong>宽松的说其实还有第四个约束，也就是节奏约束</strong>。可以看到，这个游戏的灼烧体系输出在短线比较差，相比一般队伍会吃更多战损，从而需要走更多治疗节点，损失一些成长机会。但这个约束也好解决就是抓一些生存卡，以及灼烧天然就适合拖战损然后多走治疗节点，因为这个体系相对来说没那么吃局外成长。</p></div></details><details class="design-note principle-note"><summary><span class="principle-title">清晰的成长感</span><span class="note-toggle"><span class="note-expand-label">展开详情</span><span class="note-collapse-label">收起详情</span><span class="details-icon" aria-hidden="true"></span></span></summary><div class="note-content"><p class="pending-copy">内容待补充。</p></div></details><details class="design-note principle-note"><summary><span class="principle-title">组件可跨流派生效</span><span class="note-toggle"><span class="note-expand-label">展开详情</span><span class="note-collapse-label">收起详情</span><span class="details-icon" aria-hidden="true"></span></span></summary><div class="note-content"><h4>角色代表流派，<br>但流派不止角色。</h4><p>同一种状态可被不同技能利用，组件也能跨流派发挥作用。例如，反击遗物既能强化反击体系，也能为灼烧体系增加命中次数，帮助叠加灼烧。</p></div></details></div></div>
+
         <details class="design-note iteration-review">
           <summary><span><span class="review-title">迭代复盘</span><span class="review-subtitle">解决的两个难题：战斗决策流程单一与数值平衡</span></span><span class="note-toggle"><span class="note-expand-label">展开详情</span><span class="note-collapse-label">收起详情</span><span class="details-icon"></span></span></summary>
           <div class="note-content">
@@ -50,7 +52,6 @@
 <section class="review-section" aria-labelledby="review-balance"><h3 id="review-balance">第二个难题是，回合制的肉鸽游戏，到底怎么样去把数据平衡给做好？</h3><p>我的解决思路是分两步。</p><p>第一步，先建立起卡牌和遗物的强度预算，让每一张技能牌在牌面上达成平衡，以估计出玩家在每个阶段的成长速度。再根据玩家的预期成长速度，反推敌方的成长曲线。假设玩家每经过一个成长节点，预期强度提升20%，那我可能让敌人早期的成长速度在15%左右，后期再提高到25%左右。这些数字只是用来说明思路：前期先给玩家建立构筑、感受成长的空间，后期再提高压力，考验玩家能不能通过抓牌和组合，让实际收益超过单张卡牌的基础提升。</p><p>第二步，是用无头模拟程序做批量战斗验证。</p><p>因为前面的成长曲线模型本质还是一个预估，卡牌之间的配合、抽牌顺序和实际出牌策略，都可能让结果偏离模型。所以我会把不同角色、构筑和阶段的表现作为验证方向，观察胜率、失败节点和战斗回合数，看看实际结果是不是符合第一步的预期，再去调整卡牌、遗物或者敌方曲线。</p></section>
 </div>
         </details>
-        <div class="project-story"><p class="side-label">设计核心<br><span>THE DESIGN IDEA</span></p><div><h4>角色代表流派，<br>但流派不止角色。</h4><p>同一种状态可被不同技能利用，组件也能跨流派发挥作用。例如，反击遗物既能强化反击体系，也能为灼烧体系增加命中次数，帮助叠加灼烧。</p></div></div>
       </article>
       <article class="project" id="element">
         <div class="project-heading"><div><p class="eyebrow"><span class="chapter-number">02</span> 横版动作肉鸽 / 单机</p><h2 class="project-name">元素回廊<span>Element Dungeon</span></h2></div><a class="button-link" href="https://shihan05611-cmd.github.io/element-dungeon/" target="_blank" rel="noopener">在线体验 ↗</a></div>
