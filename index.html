@@ -10,12 +10,14 @@
   <link rel="stylesheet" href="./home.css">
   <link rel="stylesheet" href="./sketch.css">
   <link rel="stylesheet" href="./design-options/themes.css">
-  <link rel="stylesheet" href="./comic.css?v=paper-cards">
+  <link rel="stylesheet" href="./comic.css?v=source-cards">
   <script>
     const previewTheme = new URLSearchParams(location.search).get('theme');
     if (['sketch', 'atlas', 'comic'].includes(previewTheme)) document.documentElement.dataset.theme = previewTheme;
   </script>
   <script src="./home.js" defer></script>
+  <link rel="stylesheet" href="./yizhe-cards.css?v=source-cards">
+  <script src="./yizhe-cards.js?v=spark-per-trigger" defer></script>
   <script src="./visit-stats.js" defer></script>
   <link rel="preload" as="image" href="./assets/characters/cat/cat_idle-cropped.png">
   <link rel="preload" as="image" href="./assets/characters/cat/cat_fire_idle-cropped.png">
@@ -43,7 +45,7 @@
           </div>
         </div>
         <div class="chess-showcase"><div class="chess-intro"><span class="eyebrow">BUILD SYNERGIES</span><p>棋盘策略<br><span>× 肉鸽构筑</span></p></div><a class="project-image chess-image" href="https://shihan05611-cmd.github.io/yizhe-card-game/" target="_blank" rel="noopener" aria-label="在线体验弈者（新窗口）"><img src="./assets/yizhe-showcase.png" alt="弈者实机画面：宁不凡与千机通过手牌指挥棋子，进行回合制战斗" width="1901" height="1063" loading="lazy" decoding="async"><span class="image-caption">现有版本 <span>实机画面 ↗</span></span></a></div>
-        <div class="project-story design-principles"><p class="side-label">设计核心与案例<br><span>THE DESIGN IDEA</span></p><div class="principle-list"><div class="design-card-grid" aria-label="灼烧体系卡牌案例"><figure><img src="./assets/cards/manyan.png" alt="蔓炎卡面" width="335" height="454" loading="lazy" decoding="async"></figure><figure><img src="./assets/cards/jujin.png" alt="聚烬卡面" width="342" height="477" loading="lazy" decoding="async"></figure><figure><img src="./assets/cards/yinbao.png" alt="灼烧引爆卡面" width="346" height="509" loading="lazy" decoding="async"></figure><figure><img src="./assets/cards/lieyan.png" alt="烈焰风暴卡面" width="337" height="511" loading="lazy" decoding="async"></figure><figure><img src="./assets/cards/huodong.png" alt="火动卡面" width="334" height="472" loading="lazy" decoding="async"></figure><figure><img src="./assets/cards/lianbing.png" alt="燎兵卡面" width="343" height="473" loading="lazy" decoding="async"></figure></div><details class="design-note principle-note"><summary><span class="principle-title">不用硬上限约束，而是用规则软约束</span><span class="note-toggle"><span class="note-expand-label">展开详情</span><span class="note-collapse-label">收起详情</span><span class="details-icon" aria-hidden="true"></span></span></summary><div class="note-content"><p>有一张牌的效果是：给对方的灼烧层数翻倍。灼烧的效果类似杀戮尖塔的中毒（结算时造成层数对应的伤害，并减少一层），看牌面效果这是一张极其强的卡，但我用了三组可解决的约束使得这张牌不失控，但又给玩家营造可突破约束的期待感；</p><p><strong>第一个约束是能量约束</strong>，这张牌没有消耗属性理论上它可以无限用，但有一个能量递增：能量会按1、2、4、4...这样一直消耗。不过项目其实只有4点能量上限，想要放出多次，就需要获得比较强的能量手段，当然也可以硬憋；</p><p><strong>第二个约束是靠“牌位”也就是出牌机会来约束</strong>，这张牌属于越打越强所以比一般的卡牌还要依赖运转。一般来说，打完一轮卡组的牌再洗牌进入下一轮需要两个回合（且随着爬塔层数增加，所需轮次会逐渐上升）。但我的战斗设计一般在6～7个回合就可以结束，也就是一般对局可打出的次数可以计算出来；实际也使用了一套伤害建模，去衡量这张牌在资源消耗和输出强化上的关系。</p><p><strong>第三个约束是这张牌只对单体生效，对群手段不足</strong>。由于我们是一个棋盘策略，需要攻击的敌人在3~4个，所以对于杀戮尖塔来说绝对超模的一张牌，放在我们这个游戏里其实并没有太过分。前面两个约束的解决方法比较显而易见，玩家心中会有明确的期待感。第三个约束的解决手段则看起来没那么明显，需要在游戏探索的过程中去发现，因为和游戏的其他卡牌联动有关，比如有一张灼烧体系的卡牌效果是可以把灼烧进行集中转移。玩家就可以先把群体的灼烧转移到一个人身上，然后再用翻倍效果打出Combo，把大量翻倍之后的灼烧层数再去转移到其他怪物身上。</p><p><strong>宽松的说其实还有第四个约束，也就是节奏约束</strong>。可以看到，这个游戏的灼烧体系输出在短线比较差，相比一般队伍会吃更多战损，从而需要走更多治疗节点，损失一些成长机会。但这个约束也好解决就是抓一些生存卡，以及灼烧天然就适合拖战损然后多走治疗节点，因为这个体系相对来说没那么吃局外成长。</p></div></details><details class="design-note principle-note"><summary><span class="principle-title">清晰的成长感</span><span class="note-toggle"><span class="note-expand-label">展开详情</span><span class="note-collapse-label">收起详情</span><span class="details-icon" aria-hidden="true"></span></span></summary><div class="note-content"><p>以上一个案例中的灼烧体系为例，我们可以看到局内和局外的都有清晰而明确的成长感。</p>
+        <div class="project-story design-principles"><p class="side-label">设计理念与案例<br><span>THE DESIGN IDEA</span></p><div class="principle-list"><div class="yizhe-cards" aria-label="灼烧体系卡牌案例"></div><noscript><p>启用 JavaScript 后可查看卡面与规则详情。</p></noscript><details class="design-note principle-note"><summary><span class="principle-title">不用硬上限约束，而是用规则软约束</span><span class="note-toggle"><span class="note-expand-label">展开设计思路</span><span class="note-collapse-label">收起详情</span><span class="details-icon" aria-hidden="true"></span></span></summary><div class="note-content"><p>有一张牌的效果是：给对方的灼烧层数翻倍。灼烧的效果类似杀戮尖塔的中毒（结算时造成层数对应的伤害，并减少一层），看牌面效果这是一张极其强的卡，但我用了三组可解决的约束使得这张牌不失控，但又给玩家营造可突破约束的期待感；</p><p><strong>第一个约束是能量约束</strong>，这张牌没有消耗属性理论上它可以无限用，但有一个能量递增：能量会按1、2、4、4...这样一直消耗。不过项目其实只有4点能量上限，想要放出多次，就需要获得比较强的能量手段，当然也可以硬憋；</p><p><strong>第二个约束是靠“牌位”也就是出牌机会来约束</strong>，这张牌属于越打越强所以比一般的卡牌还要依赖运转。一般来说，打完一轮卡组的牌再洗牌进入下一轮需要两个回合（且随着爬塔层数增加，所需轮次会逐渐上升）。但我的战斗设计一般在6～7个回合就可以结束，也就是一般对局可打出的次数可以计算出来；实际也使用了一套伤害建模，去衡量这张牌在资源消耗和输出强化上的关系。</p><p><strong>第三个约束是这张牌只对单体生效，对群手段不足</strong>。由于我们是一个棋盘策略，需要攻击的敌人在3~4个，所以对于杀戮尖塔来说绝对超模的一张牌，放在我们这个游戏里其实并没有太过分。前面两个约束的解决方法比较显而易见，玩家心中会有明确的期待感。第三个约束的解决手段则看起来没那么明显，需要在游戏探索的过程中去发现，因为和游戏的其他卡牌联动有关，比如有一张灼烧体系的卡牌效果是可以把灼烧进行集中转移。玩家就可以先把群体的灼烧转移到一个人身上，然后再用翻倍效果打出Combo，把大量翻倍之后的灼烧层数再去转移到其他怪物身上。</p><p><strong>宽松的说其实还有第四个约束，也就是节奏约束</strong>。可以看到，这个游戏的灼烧体系输出在短线比较差，相比一般队伍会吃更多战损，从而需要走更多治疗节点，损失一些成长机会。但这个约束也好解决就是抓一些生存卡，以及灼烧天然就适合拖战损然后多走治疗节点，因为这个体系相对来说没那么吃局外成长。</p></div></details><details class="design-note principle-note"><summary><span class="principle-title">清晰的成长感</span><span class="note-toggle"><span class="note-expand-label">展开设计思路</span><span class="note-collapse-label">收起详情</span><span class="details-icon" aria-hidden="true"></span></span></summary><div class="note-content"><p>以上一个案例中的灼烧体系为例，我们可以看到局内和局外的都有清晰而明确的成长感。</p>
 <p>对于局内的输出成长，令 <var>K</var><sub>i</sub> 为第 <var>i</var> 次循环后敌方身上的灼烧层数，<var>T</var> 为一轮循环所需要的回合数，<var>N</var> 是一轮循环中所有手段能够给予的灼烧层数；所以：</p>
 <div class="growth-formula" role="math" aria-label="K 下标 i 等于 2 乘以括号 K 下标 i 减 1 加 N 减 T"><var>K</var><sub>i</sub> = 2(<var>K</var><sub>i−1</sub> + <var>N</var> − <var>T</var>)</div>
 <p>从 <var>K</var><sub>0</sub> = 0 开始可以算得：</p>
@@ -51,7 +53,7 @@
 <p>也就是局内随轮次的输出能力增长可以量化。</p>
 
 <p>对于局外成长，在玩家视角里虽然不会呈现出伤害公式，但也很明确能感受到想要提升输出能力需要改善的参数，比如让卡组中提供灼烧的手段增加，让一轮循环所需的回合数更少，以及增加能量获取手段以减少“卡手”保住稳定性。（具体的循环成长模型参考下方杀戮尖塔拆解）</p>
-<p>当然清晰的成长感来源于明确的构筑核心，也就是这张使得灼烧翻倍的卡牌，不过有些看法是这会降低构筑深度；我认为围绕着一个明确的核心去构筑并没有太多地削减组合的多样性与可能性，因为这个成长核心其实非常包容，有一些hit转灼烧的卡牌，它能让提供高频攻击手段的卡牌仍然与灼烧的成长核心息息相关。</p></div></details><details class="design-note principle-note"><summary><span class="principle-title">组件可跨流派生效</span><span class="note-toggle"><span class="note-expand-label">展开详情</span><span class="note-collapse-label">收起详情</span><span class="details-icon" aria-hidden="true"></span></span></summary><div class="note-content"><h4>角色代表流派，<br>但流派不止角色。</h4><p>同一种状态可被不同技能利用，组件也能跨流派发挥作用。例如，反击遗物既能强化反击体系，也能为灼烧体系增加命中次数，帮助叠加灼烧。</p></div></details></div></div>
+<p>当然清晰的成长感来源于明确的构筑核心，也就是这张使得灼烧翻倍的卡牌，不过有些看法是这会降低构筑深度；我认为围绕着一个明确的核心去构筑并没有太多地削减组合的多样性与可能性，因为这个成长核心其实非常包容，有一些hit转灼烧的卡牌，它能让提供高频攻击手段的卡牌仍然与灼烧的成长核心息息相关。</p></div></details><details class="design-note principle-note"><summary><span class="principle-title">组件可跨流派生效</span><span class="note-toggle"><span class="note-expand-label">展开设计思路</span><span class="note-collapse-label">收起详情</span><span class="details-icon" aria-hidden="true"></span></span></summary><div class="note-content"><h4>角色代表流派，<br>但流派不止角色。</h4><p>同一种状态可被不同技能利用，组件也能跨流派发挥作用。例如，反击遗物既能强化反击体系，也能为灼烧体系增加命中次数，帮助叠加灼烧。</p></div></details></div></div>
 
         <details class="design-note iteration-review">
           <summary><span><span class="review-title">迭代复盘</span><span class="review-subtitle">解决的两个难题：战斗决策流程单一与数值平衡</span></span><span class="note-toggle"><span class="note-expand-label">展开详情</span><span class="note-collapse-label">收起详情</span><span class="details-icon"></span></span></summary>
@@ -98,5 +100,12 @@
     <a href="https://busuanzi.ibruce.info/" target="_blank" rel="noopener" title="访问统计由不蒜子第三方服务提供">不蒜子统计 ↗</a>
     <noscript>启用 JavaScript 后可显示访问统计。</noscript>
   </div>
+<dialog class="yizhe-rules" aria-labelledby="yizhe-rule-title">
+    <h2 id="yizhe-rule-title"></h2>
+    <p class="yizhe-rules__meta"></p>
+    <p class="yizhe-rules__description"></p>
+    <section class="yizhe-rules__notes" aria-label="规则注释"></section>
+    <form method="dialog"><button>关闭</button></form>
+  </dialog>
 </body>
 </html>
